@@ -7,15 +7,15 @@ spec:
   generators:
     - list:
         elements:
-          - cluster: in-cluster
-            name: ic-rhoai-operator
-            path: bootstrap/ic-rhoai-operator/overlays/main
-          - cluster: in-cluster
-            name: ic-rhoai-installation
-            path: bootstrap/ic-rhoai-installation/overlays/main
-          - cluster: in-cluster
-            name: ic-rhoai-configuration
-            path: bootstrap/ic-rhoai-configuration/overlays/main
+#          - cluster: in-cluster
+#            name: ic-rhoai-operator
+#            path: bootstrap/ic-rhoai-operator/overlays/main
+#          - cluster: in-cluster
+#            name: ic-rhoai-installation
+#            path: bootstrap/ic-rhoai-installation/overlays/main
+#          - cluster: in-cluster
+#            name: ic-rhoai-configuration
+#            path: bootstrap/ic-rhoai-configuration/overlays/main
           - cluster: in-cluster
             name: ic-shared-minio-app
             path: bootstrap/ic-shared-minio/overlays/main
