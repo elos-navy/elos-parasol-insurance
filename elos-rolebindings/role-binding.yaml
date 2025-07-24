@@ -1,0 +1,57 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: argocd-serviceaccount-manager-binding
+  namespace: ic-shared-img-det
+subjects:
+- kind: ServiceAccount
+  name: openshift-gitops-argocd-application-controller
+  namespace: openshift-gitops
+roleRef:
+  kind: Role
+  name: argocd-serviceaccount-manager
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: argocd-daemonset-manager-binding
+  namespace: rhods-notebooks
+subjects:
+- kind: ServiceAccount
+  name: openshift-gitops-argocd-application-controller
+  namespace: openshift-gitops
+roleRef:
+  kind: Role
+  name: argocd-daemonset-manager
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: datascienceclusters-viewer-binding
+  namespace: redhat-ods-operator
+subjects:
+- kind: ServiceAccount
+  name: presync-monitoring-sa
+  namespace: redhat-ods-operator
+roleRef:
+  kind: Role
+  name: datascienceclusters-viewer
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: argocd-kserve-manager-binding
+  namespace: ic-shared-llm
+subjects:
+- kind: ServiceAccount
+  name: openshift-gitops-argocd-application-controller
+  namespace: openshift-gitops
+roleRef:
+  kind: Role
+  name: argocd-kserve-manager
+  apiGroup: rbac.authorization.k8s.io
+
