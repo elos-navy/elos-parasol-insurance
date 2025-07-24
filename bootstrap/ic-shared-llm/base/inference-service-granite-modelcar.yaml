@@ -35,12 +35,10 @@ spec:
         limits:
           cpu: '6'
           memory: 24Gi
-          nvidia.com/gpu: '1'
         requests:
           cpu: '1'
           memory: 8Gi
-          nvidia.com/gpu: '1'
-      runtime: vllm
+      runtime: vllm-runtime-parasol
       storageUri: oci://registry.redhat.io/rhelai1/modelcar-granite-3-1-8b-instruct:1.5
     tolerations:
       - effect: NoSchedule

@@ -3,14 +3,13 @@ apiVersion: serving.kserve.io/v1alpha1
 kind: ServingRuntime
 metadata:
   annotations:
-    opendatahub.io/accelerator-name: migrated-gpu
     opendatahub.io/apiProtocol: REST
     opendatahub.io/recommended-accelerators: '["nvidia.com/gpu"]'
-    opendatahub.io/template-display-name: vLLM ServingRuntime for KServe
-    opendatahub.io/template-name: vllm-runtime
-    openshift.io/display-name: vllm
+    opendatahub.io/template-display-name: vLLM Parasol ServingRuntime for KServe
+    opendatahub.io/template-name: vllm-runtime-parasol
+    openshift.io/display-name: vllm-runtime-parasol
     argocd.argoproj.io/sync-wave: "1"
-  name: vllm
+  name: vllm-runtime-parasol
   namespace: ic-shared-llm
   labels:
     opendatahub.io/dashboard: 'true'
@@ -26,7 +25,7 @@ spec:
       env:
         - name: HF_HOME
           value: /tmp/hf_home
-      image: 'quay.io/modh/vllm:rhoai-2.19-cuda'
+      image: 'public.ecr.aws/q9t5s3a7/vllm-cpu-release-repo:v0.9.2'
       name: kserve-container
       ports:
         - containerPort: 8080
