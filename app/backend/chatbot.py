@@ -37,7 +37,7 @@ class Chatbot:
 
         self.model_kwargs = {"trust_remote_code": True}
         self.embeddings = HuggingFaceEmbeddings(
-            model_name="/opt/app-root/src/nomic-embed-text-v1",
+            model_name="/opt/app-root/nomic-embed-text-v1",
             model_kwargs=self.model_kwargs,
             show_progress=False,
         )
